@@ -1,0 +1,45 @@
+#list {
+  padding-bottom: 8em;
+
+  .add-button {
+
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    .transform(translateX(-50%));
+  
+    .button {
+      position: relative;
+      margin: 0;
+
+      .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.75);
+      }
+    }
+  }
+
+  .card {
+    .ui.header {
+      i {
+        margin: 0 5px 0 -7px;
+      }
+    }
+
+    .ui.statistics {
+      .ui.statistic {
+        > .label {
+          font-weight: normal;
+          text-transform: none;
+          line-height: 16px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}

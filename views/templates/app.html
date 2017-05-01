@@ -1,0 +1,8 @@
+<div class='ui fixed inverted menu' id='menu'></div>
+<div class='ui container' id='app'>
+  <% _.each(ids, function(id, i) { %>
+    <div class='page<% if (page < i) { %> page-right<% } if (page > i) { %> page-left<% } %>' id=<%- id %>></div>
+  <% }); %>
+</div>
+<div class='ui long modal' id='modal'></div>
+<div class='ui small modal' id='modal-alert'></div>

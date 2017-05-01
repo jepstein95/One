@@ -1,0 +1,69 @@
+<% if (loading === true) { %>
+  <div class='ui main container'>
+    <div class='ui active centered inline loader'></div>
+  </div>
+<% } else { %>
+  <div class='ui main container'>
+    <% if (threads.length) { %>  
+      <div class='ui cards'>
+        <% _.each(threads, function(thread) { %>
+          <div class='card' id='<%- thread._id %>'>
+            <div class='content'>
+              <div class='right floated meta'>
+                <%- thread.curr_score %>
+                <i class='yellow star icon'></i>
+              </div>
+              <div class='header'>
+                <h3 class='ui header'>
+                  <% if (thread.mark) { %><i class='blue check circle icon' rel='mark-<%- thread._id %>'></i>
+                  <% } else { %><i class='grey inverted radio icon' rel='mark-<%-thread._id %>'></i><% } %>
+                  <%- thread.name %>
+                </h3>
+              </div>
+              <div class='description'><%- thread.description %></div>
+            </div>
+            <div class='content'>
+              <div class='ui three mini statistics'>
+                <div class='ui statistic'>
+                  <div class='value'><i class='yellow lightning icon'></i> <%- thread.curr_streak %></div>
+                  <div class='label'>Current<br>Streak</div>
+                </div>
+                <div class='ui statistic'>
+                  <div class='value'><i class='yellow lightning icon'></i> <%- thread.best_streak %></div>
+                  <div class='label'>Best<br>Streak</div>
+                </div>
+                <div class='ui statistic'>
+                  <div class='value'><i class='yellow star icon'></i> <%- thread.best_score %></div>
+                  <div class='label'>High<br>Score</div>
+                </div>
+              </div>
+            </div>
+            <div class='content'>
+              <div class='left floated'>
+                <a href='#' rel='delete-<%- thread._id %>'>Delete</a>
+              </div>
+              <div class='right floated'>
+                <a href='#' rel='edit-<%- thread._id %>'>Edit</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } else { %>
+      <p>
+        Click
+        <button class='ui mini circular icon button' style='margin: 0 2px;'>
+          <i class='add icon'></i>
+        </button>
+        to add a new Thread.
+      </p>
+      <p>Or, <a href='#' rel='learn-more'>learn more</a>.</p>
+    <% } %>
+  </div>
+  <div class='add-button page-fixed'>
+    <button class='ui massive circular icon button'>
+      <i class='add icon'></i>
+      <div class='shadow'></div>
+    </button>
+  </div>
+<% } %>
