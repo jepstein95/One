@@ -4,5 +4,7 @@ One is a personal motivation app that understands the importance of setting powe
 
 
 To run:
-  1. npm install
-  2. npm start
+```
+npm install
+npm start
+```
